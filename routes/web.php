@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/produtos', 'ProdutoController@lista');
+Route::get('/produtos', 'ProdutoController@lista')->name('produtos');
 
-Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id', '[0-9]+');
+Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id', '[0-9]+')->name('detalhes-produto');
 
