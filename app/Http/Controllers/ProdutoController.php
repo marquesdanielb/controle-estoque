@@ -11,7 +11,7 @@ class ProdutoController extends Controller
     {
         $produtos = DB::select('SELECT * FROM produtos');
 
-        return view('listagem', [
+        return view('produto.listagem', [
             'produtos' => $produtos,
         ]);
     }
@@ -24,7 +24,7 @@ class ProdutoController extends Controller
             return 'Esse produto não existe';
         }
 
-        return view('detalhes', [
+        return view('produto.detalhes', [
             'produto' => $produto[0],
         ]);
     }

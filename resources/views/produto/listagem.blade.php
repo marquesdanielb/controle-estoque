@@ -1,4 +1,4 @@
-@extends('principal')
+@extends('layout.principal')
 
 @section('conteudo')
     <h1>Listagem de produtos</h1>
@@ -24,8 +24,8 @@
         </div>
     @endif
         <h4>
-            <span class="alert alert-danger float-right">
-                Um ou menos itens no estoque
+            <span class="danger float-right">
+                🚨 Um ou menos itens no estoque
             </span>
         </h4>
 @stop
