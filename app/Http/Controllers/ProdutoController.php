@@ -28,4 +28,26 @@ class ProdutoController extends Controller
             'produto' => $produto[0],
         ]);
     }
+
+    public function novo()
+    {
+        return view('produto.formulario');
+    }
+
+    public function adiciona()
+    {
+        $nome = Request::input('nome');
+        $descricao = Request::input('descricao');
+        $valor = Request::input('valor');
+        $quantidade = Request::input('quantidade');
+
+        DB::insert('INSERT INTO produtos (nome, descricao, valor, quantidade) VALUES (?, ?, ?, ?)',
+        [
+            $nome, $descricao, $valor, $quantidade
+        ]);
+
+        return redirect()
+            ->action('ProdutoController@lista')
+            ->withInput(Request::only('nome'));
+    }
 }
