@@ -21,6 +21,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{route('produtos')}}">Listagem</a></li>
+                    <li><a href="{{route('novo-produto')}}">Adicionar novo produto</a></li>
                 </ul>
             </div>
         </nav>
