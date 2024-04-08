@@ -12,7 +12,13 @@
                     <td>{{$produto->quantidade}}</td>
                     <td>
                         <a href="{{route('detalhes-produto', $produto->id)}}">
-                            Detalhes
+                            🔍
+                        </a>
+                        <a href="{{route('edita-produto', $produto->id)}}">
+                            📝
+                        </a>
+                        <a href="{{route('remove-produto', $produto->id)}}">
+                            🗑️
                         </a>
                     </td>
                 </tr>
@@ -23,11 +29,15 @@
             Você não tem nenhum produto cadastrado.
         </div>
     @endif
+
+    @if ($produto->quantidade <= 1)
         <h4>
             <span class="float-right">
                 🚨 Um ou menos itens no estoque
             </span>
         </h4>
+    @endif
+
     @if (old('nome'))
         <div class="alert alert-success mt-2">
             O produto {{old('nome')}} foi adicionado com <strong>sucesso</strong>!
